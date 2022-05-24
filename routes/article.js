@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
   const article = username
     ? await Articles.find(
         { username },
-        { _id: 0, username: 1, title: 1, password: 1, content: 1 }
+        { _id: 0, title: 1, username: 1, date: 1 }
       )
     : wholeArticle.sort((a, b) => a['date'] - b['date']);
   res.json({ article });
@@ -35,7 +35,7 @@ router.post('/article', async (req, res) => {
 router.get('/article', async (req, res) => {
   const article = await Articles.find(
     {},
-    { _id: 0, username: 1, title: 1, password: 1, content: 1 }
+    { _id: 0, username: 1, title: 1, date: 1, content: 1 }
   );
   res.json({ article });
 });
