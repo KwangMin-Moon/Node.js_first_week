@@ -1,7 +1,7 @@
 const express = require('express');
 const connect = require('./schemas');
 const app = express();
-const port = 5001;
+const port = 3000;
 const articleRouter = require('./routes/article.js');
 
 connect();
