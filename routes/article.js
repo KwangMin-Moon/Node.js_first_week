@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
         { username },
         { _id: 0, title: 1, username: 1, date: 1 }
       )
-    : wholeArticle.sort((a, b) => a['date'] - b['date']);
+    : wholeArticle.sort((a, b) => b['date'] - a['date']);
   res.json({ article });
 });
 
